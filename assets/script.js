@@ -25,6 +25,7 @@ const questions = [
     correct: "Ewasko",
   },
 ];
+let firstName = "";
 let qIndex = 0;
 let timerCount = 60;
 let isWin = false;
@@ -82,15 +83,20 @@ function startTimer() {
       // Tests if win condition is met
       if (isWin && timerCount > 0) {
         // Clears interval and stops timer
-        let firstName = prompt(
+        prompt(
           `Game over, your score is ${timerCount}. Enter your name below to record your high score`
         );
+
         nameDiv.textContent = firstName;
         finalScore.textContent = timerCount;
         scoreBoardElement.style.display = "block";
-        // questions.style.display = "hidden";
+        restartQuizBtn.style.display = "block";
+        questionDiv.innerHTML = " ";
+        answersDiv.innerHTML = " ";
+        timerContainer.innerHTML = " ";
 
         clearInterval(time);
+        recordUserScore();
         // let playAgain = confirm("Play again?");
         // if (playAgain) {
         //   location.reload();
@@ -108,7 +114,26 @@ function startTimer() {
     }
   }, 1000);
 }
+
 // Save high score
+function recordUserScore() {
+  const highScores =
+    JSON.parse(window.localStorage.getItem("highScores")) || [];
+  const theScore = {
+    firstname: firstName,
+    score: timerCount,
+  };
+  highScores.push(theScore);
+  window.localStorage.setItem("highScores", JSON.stringify(highScores));
+  highScores.forEach((score) => {
+    scoreBoardElement.innerHTML += `${score.name}: ${score.score}`;
+  });
+}
+// get local data
+// set local storage to save name and score
+// reorder data from highest to lowest
+// loop through data in order to show separate lines
+// show all scores and names
 // localStorage.setItem("timerCount", JSON.stringify(timerCount));
 // renderMessage();
 
@@ -121,3 +146,6 @@ function renderMessage() {
 }
 // Initialization - Start
 startBtn.addEventListener("click", startTimer);
+restartQuizBtn.addEventListener("click", function () {
+  location.reload();
+});
