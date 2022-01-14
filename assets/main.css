@@ -1,0 +1,31 @@
+.b-solid {
+  border: solid black;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.p {
+  padding: 1.5rem;
+}
+
+#scoreboard {
+  display: none;
+}
+
+#timer {
+  display: none;
+}
+
+#restartQuiz {
+  display: none;
+}
