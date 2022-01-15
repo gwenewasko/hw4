@@ -11,24 +11,69 @@ const restartQuizBtn = document.getElementById("restartQuiz");
 const scoreTitleElement = document.getElementById("scoretitle");
 const questions = [
   {
-    title: "What is David Blaine's first name?",
-    answers: ["David", "Chris", "Joe Exotic"],
-    correct: "David",
+    title:
+      "Finish the lyric -- Britney says: <i>'Oops I did it again, I played with your heart ___'</i>",
+    answers: [
+      "...can't you see I'm a fool in so many ways",
+      "...got lost in the game",
+      "...that is just so typically me",
+    ],
+    correct: "...got lost in the game",
   },
   {
-    title: "What is Cris Angel's last name?",
-    answers: ["Angel", "Smith", "Blaine"],
-    correct: "Angel",
+    title:
+      "Finish the lyric -- Jimmy Eat World Says: <i>'You know you're doing better on your own? ___'</i>",
+    answers: [
+      "...so don't buy in",
+      "...for someone else",
+      "...you know they're all the same",
+    ],
+    correct: "...so don't buy in",
   },
   {
-    title: "What is Gwen's last name?",
-    answers: ["Ewasko", "Angel", "Blaine"],
-    correct: "Ewasko",
+    title:
+      "Finish the lyric -- OutKast says: <i>'I want to see you on your badest behavior! ___'</i>",
+    answers: [
+      "...now, what's cooler than being cool?",
+      "...shake it, shake it, shake it",
+      "...lend me some sugar, I am your neighbor!",
+    ],
+    correct: "...lend me some sugar, I am your neighbor!",
+  },
+  {
+    title:
+      "Finish the lyric -- Kelly Clarkson says: <i>'How can I put it? You put me on ___'</i>",
+    answers: [
+      "...since you been gone",
+      "...I even fell for that stupid love song",
+      "...guess you never felt that way",
+    ],
+    correct: "...I even fell for that stupid love song",
+  },
+  {
+    title:
+      "Finish the lyric -- N'sync says: <i>'Every little thing I do, never seems enough for you ___'</i>",
+    answers: [
+      "...but in the end, ya know it's gonna be me",
+      "...guess what? It's gonna be me",
+      "...you don't want to lose it again",
+    ],
+    correct: "...you don't want to lose it again",
+  },
+  {
+    title:
+      "Finish the lyric -- Blink 182 says: <i>'Where are you? And I'm so sorry ___'</i>",
+    answers: [
+      "...I cannot sleep, I cannot dream tonight",
+      "...this sick, strange darkness",
+      "...and as I stare, I counted the webs from all the spiders",
+    ],
+    correct: "...I cannot sleep, I cannot dream tonight",
   },
 ];
 // let firstName;
 let qIndex = 0;
-let timerCount = 30;
+let timerCount = 60;
 let isWin = false;
 // Functions
 function startGame() {
@@ -43,6 +88,7 @@ function startGame() {
     const answerBtn = document.createElement("button");
     answerBtn.textContent = answer;
     answerBtn.setAttribute("value", answer);
+    answerBtn.setAttribute("class", "btn");
     answerBtn.onclick = answerClick;
     answersDiv.appendChild(answerBtn);
   });
@@ -64,9 +110,9 @@ function answerClick() {
     }
   } else {
     // Let user know they got the answer wrong
-    alert("Oops! Try again.");
+    alert("Oops, try again!");
     // TODO: Subtract time from timer
-    timerCount = timerCount - 10;
+    timerCount = timerCount - 5;
   }
 }
 
@@ -111,7 +157,9 @@ function startTimer() {
       // Clears interval
       clearInterval(time);
       // loseGame();
-      alert("You ran out of time and lost.");
+      alert(
+        "🎶 You may hate me but it ain't no lie -- bye, bye, bye! You lost the game. 🎶"
+      );
     }
   }, 1000);
 }

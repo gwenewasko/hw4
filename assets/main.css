@@ -6,8 +6,10 @@
   display: block;
 }
 
-.flex {
-  display: flex;
+.btn {
+  margin: 6px;
+  flex-direction: column;
+  display: block;
 }
 
 .j-center {
