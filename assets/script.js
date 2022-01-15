@@ -8,6 +8,7 @@ const scoreBoardElement = document.getElementById("scoreboard");
 const nameDiv = document.getElementById("name");
 const finalScore = document.getElementById("score");
 const restartQuizBtn = document.getElementById("restartQuiz");
+const scoreTitleElement = document.getElementById("scoretitle");
 const questions = [
   {
     title: "What is David Blaine's first name?",
@@ -25,9 +26,9 @@ const questions = [
     correct: "Ewasko",
   },
 ];
-let firstName = "";
+// let firstName;
 let qIndex = 0;
-let timerCount = 60;
+let timerCount = 30;
 let isWin = false;
 // Functions
 function startGame() {
@@ -83,12 +84,12 @@ function startTimer() {
       // Tests if win condition is met
       if (isWin && timerCount > 0) {
         // Clears interval and stops timer
-        prompt(
+        firstName = prompt(
           `Game over, your score is ${timerCount}. Enter your name below to record your high score`
         );
 
-        nameDiv.textContent = firstName;
-        finalScore.textContent = timerCount;
+        // nameDiv.textContent = firstName;
+        // finalScore.textContent = timerCount;
         scoreBoardElement.style.display = "block";
         restartQuizBtn.style.display = "block";
         questionDiv.innerHTML = " ";
@@ -125,8 +126,9 @@ function recordUserScore() {
   };
   highScores.push(theScore);
   window.localStorage.setItem("highScores", JSON.stringify(highScores));
+  scoreTitleElement.innerHTML = "Scores";
   highScores.forEach((score) => {
-    scoreBoardElement.innerHTML += `${score.name}: ${score.score}`;
+    scoreBoardElement.innerHTML += `<li>${score.firstname}: ${score.score}</li>`;
   });
 }
 // get local data
