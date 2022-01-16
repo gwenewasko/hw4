@@ -11,3 +11,12 @@ Once the user has answered all questions correctly, they are given thier score, 
 A "Restart" button then appears, prompting the user to try again. If clicked, the game is reloaded and the timer starts over.
 
 ## Screenshots
+
+![Here is the screenshot of my quiz game application which shows the inital page.](./images/gwen-ewasko-hw4-screen1.png)
+
+![Here is another screenshot showing the final application screen with scoreboard.](./images/gwen-ewasko-hw4-screen2.png)
+
+## Links to Application
+
+- Here is the repo: [gwenewasko/repo](https://github.com/gwenewasko/hw4)
+- Here is the page: [gwenewasko/pages](https://gwenewasko.github.io/hw4/)
