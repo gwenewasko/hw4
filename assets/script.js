@@ -12,7 +12,7 @@ const scoreTitleElement = document.getElementById("scoretitle");
 const questions = [
   {
     title:
-      "Finish the lyric -- Britney says: <i>'Oops I did it again, I played with your heart ___'</i>",
+      "<p>Britney says:<i>'Oops I did it again, I played with your heart ___'</i></p>",
     answers: [
       "...can't you see I'm a fool in so many ways",
       "...got lost in the game",
@@ -22,7 +22,7 @@ const questions = [
   },
   {
     title:
-      "Finish the lyric -- Jimmy Eat World Says: <i>'You know you're doing better on your own? ___'</i>",
+      "<p>Jimmy Eat World Says: <i>'You know you're doing better on your own? ___'</i></p>",
     answers: [
       "...so don't buy in",
       "...for someone else",
@@ -32,7 +32,7 @@ const questions = [
   },
   {
     title:
-      "Finish the lyric -- OutKast says: <i>'I want to see you on your badest behavior! ___'</i>",
+      "<p>OutKast says: <i>'I want to see you on your badest behavior! ___'</i></p>",
     answers: [
       "...now, what's cooler than being cool?",
       "...shake it, shake it, shake it",
@@ -42,7 +42,7 @@ const questions = [
   },
   {
     title:
-      "Finish the lyric -- Kelly Clarkson says: <i>'How can I put it? You put me on ___'</i>",
+      "<p>Kelly Clarkson says: <i>'How can I put it? You put me on ___'</i></p>",
     answers: [
       "...since you been gone",
       "...I even fell for that stupid love song",
@@ -52,7 +52,7 @@ const questions = [
   },
   {
     title:
-      "Finish the lyric -- N'sync says: <i>'Every little thing I do, never seems enough for you ___'</i>",
+      "<p>N'sync says: <i>'Every little thing I do, never seems enough for you ___'</i></p>",
     answers: [
       "...but in the end, ya know it's gonna be me",
       "...guess what? It's gonna be me",
@@ -62,7 +62,7 @@ const questions = [
   },
   {
     title:
-      "Finish the lyric -- Blink 182 says: <i>'Where are you? And I'm so sorry ___'</i>",
+      "<p>Blink 182 says: <i>'Where are you? And I'm so sorry ___'</i></p>",
     answers: [
       "...I cannot sleep, I cannot dream tonight",
       "...this sick, strange darkness",
@@ -71,7 +71,6 @@ const questions = [
     correct: "...I cannot sleep, I cannot dream tonight",
   },
 ];
-// let firstName;
 let qIndex = 0;
 let timerCount = 60;
 let isWin = false;
@@ -100,7 +99,7 @@ function answerClick() {
   // Verify to see answer is correct
   if (clickedAnswer === questions[qIndex].correct) {
     // Let user know they got the right answer
-    alert("Correct");
+    alert("🎶OoooOOOOhhh yeah yeah, you got that right!🎶");
     // Move to next question or end game
     qIndex++;
     if (questions.length > qIndex) {
@@ -131,11 +130,9 @@ function startTimer() {
       if (isWin && timerCount > 0) {
         // Clears interval and stops timer
         firstName = prompt(
-          `Game over, your score is ${timerCount}. Enter your name below to record your high score`
+          `Game over! your score is ${timerCount}. Enter your name below to get on the scoreboard.`
         );
 
-        // nameDiv.textContent = firstName;
-        // finalScore.textContent = timerCount;
         scoreBoardElement.style.display = "block";
         restartQuizBtn.style.display = "block";
         questionDiv.innerHTML = " ";
@@ -144,19 +141,12 @@ function startTimer() {
 
         clearInterval(time);
         recordUserScore();
-        // let playAgain = confirm("Play again?");
-        // if (playAgain) {
-        //   location.reload();
-        // }
-
-        // winGame();
       }
     }
     // Tests if time has run out
     if (timerCount === 0) {
       // Clears interval
       clearInterval(time);
-      // loseGame();
       alert(
         "🎶 You may hate me but it ain't no lie -- bye, bye, bye! You lost the game. 🎶"
       );

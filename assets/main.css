@@ -1,33 +1,123 @@
-.b-solid {
-  border: solid black;
+* {
+  margin: 1rem;
+}
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 3rem;
+  line-height: 10vh;
+  color: rgb(45, 48, 71);
+}
+
+h2 {
+  font-family: "Orelega One", cursive;
+  line-height: 3vh;
+  font-size: 2rem;
+  color: rgb(147, 183, 190);
+}
+
+h3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  line-height: 8vh;
+  font-size: 2rem;
+  color: rgb(45, 48, 71);
+}
+
+p {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 3vh;
+  line-height: 2rem;
 }
 
 .block {
   display: block;
 }
 
+.border {
+  border: solid lightgray 1px;
+}
+
+.border-left {
+  border-left: solid lightgray 1px;
+}
+
 .btn {
-  margin: 6px;
+  text-align: left;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: none;
   flex-direction: column;
   display: block;
+  padding: 12px;
+  border: none;
+  font-family: "Orelega One", cursive;
+  font-size: 1rem;
+  background-color: light-grey;
+  color: grey;
+}
+
+.btn-1 {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: none;
+  padding: 12px;
+  border: none;
+  background-color: rgb(224, 202, 60);
+  font-family: "Rubik", sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.d-f {
+  display: flex;
+}
+
+.flex {
+  display: flex;
+}
+
+.fxw-w {
+  flex-wrap: wrap;
 }
 
 .j-center {
   justify-content: center;
 }
 
+.lis-n {
+  list-style: none;
+}
+
+.m {
+  margin: 3rem;
+}
+
 .p {
   padding: 1.5rem;
+}
+
+#restartQuiz {
+  display: none;
 }
 
 #scoreboard {
   display: none;
 }
 
-#timer {
-  display: none;
+.score-text {
+  font-family: "Rubik", sans-serif;
 }
 
-#restartQuiz {
+.timer {
+  font-family: "Rubik", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#timer {
   display: none;
 }

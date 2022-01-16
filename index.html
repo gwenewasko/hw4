@@ -5,28 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Oswald:wght@300;500&family=Rubik:wght@600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/main.css">
     <title>Gwen's Quiz Game</title>
 </head>
 
 <body>
-    <main class="b-solid j-center p">
-        <div>
-            <h1>Finish the lyric: 2000's Top Hits Edition</h1>
-            <p>Test your knowledge of early 2000's pop music!</p>
-            <button id="start">Start Quiz</button>
-            <button id="restartQuiz">Restart</button>
-            <p id="timer">Timer: <span id="time">60</span></p>
-        </div>
-        <!-- Questions and Answers -->
-        <h2 id="question"></h2>
-        <div class="btn" id="answers"></div>
-        <!-- High Score Box -->
-        <h2 id="scoretitle"></h2>
-        <ul id="scoreboard"></ul>
+    <main>
+        <section class="d-f fxw-w">
+            <div>
+                <h2><i class="fas fa-music"></i> Finish the lyric...</h2>
+                <h1>2000's Top Hits Edition</h1>
+                <h3>The mic is in your hands. Good luck!</h3>
+                <button class="btn-1" id="start">Let's Go</button>
+                <button class="btn-1" id="restartQuiz">Restart</button>
+                <p class="flex" id="timer">Timer:<span id="time">60</span></p>
+            </div>
+            <div>
+                <!-- Questions and Answers -->
+                <h3 id="question"></h3>
+                <p id="answers"></p>
+                <!-- High Score Box -->
+            </div>
+            <div class="border-left lis-n score-text" id="scoreboard">
+                <h2 id="scoretitle"></h2>
+            </div>
+        </section>
         <!-- <li>Name: <span id="name"></span></li> -->
         <!-- <li>Score: <span id="score"></span></li> -->
-
         <script src="./assets/script.js"></script>
     </main>
 </body>
